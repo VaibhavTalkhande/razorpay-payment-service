@@ -1,4 +1,4 @@
-import razorpay from "../utils/razorpay";
+const razorpay = require("../utils/razorpay");
 
 var options = {
   amount: 50000,  // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
