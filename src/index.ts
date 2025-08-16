@@ -15,7 +15,7 @@ app.use(cors(
     }
 ))
 
-app.post('/api/webhook', (req: Request, res: Response) => {
+app.post('/api/webhook', express.raw({ type: 'application/json' }), (req: Request, res: Response) => {
     const webhookSecret = process.env.RAZORPAY_WEBHOOK_SECRET;
     if (!webhookSecret) {
         throw new Error("RAZORPAY_WEBHOOK_SECRET is not defined in environment variables.");
